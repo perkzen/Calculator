@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="script.js" defer></script>
+    <title>Kalkulator</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center m-4">Kalkulator</h1>
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-3">
+
+            <form class="form form-control shadow-lg p-3 mb-5 bg-body rounded">
+
+                    <div class="row d-flex justify-content-center">
+                        <input type="text" class="form form-control col-4 m-1" id="result"
+                               style="width: 280px; height: 50px" disabled>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <input type="text" class="form form-control col-4 m-1" id="display"
+                               style="width: 280px; height: 50px" disabled>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary col m-2" data-sign>%</button>
+                        <button type="button" class="btn btn-primary col m-2" data-operator>√</button>
+                        <button type="button" class="btn btn-primary col m-2" data-operator>x²</button>
+                        <button type="button" class="btn btn-primary col m-2" data-operator>1/x</button>
+                    </div>
+
+                    <div class="row d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary col m-2" data-clearentry>CE</button>
+                        <button type="button" class="btn btn-primary col m-2" data-clear>C</button>
+                        <button type="button" class="btn btn-primary col m-2" data-delete>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-backspace" viewBox="0 0 16 16">
+                                <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"></path>
+                                <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"></path>
+                            </svg>
+                        </button>
+                        <button type="button" class="btn btn-primary col m-2 " data-sign>/</button>
+                    </div>
+
+                    <div class="row d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>7</button>
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>8</button>
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>9</button>
+                        <button type="button" class="btn btn-primary col m-2" data-sign>*</button>
+                    </div>
+
+                    <div class="row d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>6</button>
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>5</button>
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>4</button>
+                        <button type="button" class="btn btn-primary col m-2" data-sign>-</button>
+                    </div>
+
+                    <div class="row d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>1</button>
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>2</button>
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>3</button>
+                        <button type="button" class="btn btn-primary col m-2" data-sign>+</button>
+                    </div>
+
+                    <div class="row d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-primary col m-2" data-negate>-/+</button>
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>0</button>
+                        <button type="button" class="btn btn-outline-primary col m-2" data-number>.</button>
+                        <button type="button" class="btn btn-primary col m-2" data-equals>=</button>
+                    </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+</html>
