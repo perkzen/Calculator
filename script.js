@@ -13,7 +13,7 @@ number_btn.forEach(number_btn => number_btn.addEventListener("click", function (
         display.value = "0" + display.value;
     }
 
-    // družuje številke
+    // združuje številke
     display.value += number_btn.innerHTML;
 
 
