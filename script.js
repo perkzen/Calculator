@@ -60,7 +60,6 @@ sign_btn.forEach(sign_btn => sign_btn.addEventListener("click", function () {
         display.value = "";
     }
 
-
 }));
 
 
@@ -75,11 +74,12 @@ equals.addEventListener("click", function () {
 const negate = document.querySelector("[data-negate]");
 negate.addEventListener("click", function () {
 
-    if (display.value[0] !== "-") {
+    if (display.value[1] !== "-" && display.value !== "") {
         display.value = "(-" + display.value + ")"
     } else {
         display.value = display.value.slice(2, display.value.length - 1);
     }
+
 })
 
 
@@ -105,7 +105,15 @@ operator_btn.forEach(operator => operator.addEventListener("click", function () 
             }
             break;
     }
+
 }))
+
+
+// deljenje z nič
+
+// samo en zaporedni operatov
+
+// negacija
 
 
 
