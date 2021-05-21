@@ -55,7 +55,7 @@ const sign_btn = document.querySelectorAll("[data-sign]");
 sign_btn.forEach(sign_btn => sign_btn.addEventListener("click", function () {
 
     // če nimamo števil nemoremo pisat znakov
-    if (history.value !== "" || display.value !== "") {
+    if (display.value !== "") {
         history.value += display.value + " " + sign_btn.innerHTML + " ";
         display.value = "";
     }
@@ -113,7 +113,7 @@ operator_btn.forEach(operator => operator.addEventListener("click", function () 
 
 // samo en zaporedni operatov
 
-// negacija
+
 
 
 
