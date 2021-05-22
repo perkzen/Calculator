@@ -34,7 +34,6 @@ number_btn.forEach(number_btn => number_btn.addEventListener("click", function (
     // združuje številke
     display.value += number_btn.innerHTML;
 
-
     // pogleda, če je na zadnjem mestu operator, drugače se displat reseta, če je vneseno število
     if (!signArray.some(sign)) {
         history.value = "";
@@ -42,12 +41,10 @@ number_btn.forEach(number_btn => number_btn.addEventListener("click", function (
 
 }));
 
-
 const clear_entry = document.querySelector("[data-clearentry]");
 clear_entry.addEventListener("click", function () {
     display.value = "";
 })
-
 
 const clear_btn = document.querySelector("[data-clear]");
 clear_btn.addEventListener("click", function () {
@@ -55,12 +52,10 @@ clear_btn.addEventListener("click", function () {
     history.value = "";
 })
 
-
 const backspace = document.querySelector("[data-delete]");
 backspace.addEventListener("click", function () {
     display.value = display.value.slice(0, -1);
 })
-
 
 const sign_btn = document.querySelectorAll("[data-sign]");
 sign_btn.forEach(sign_btn => sign_btn.addEventListener("click", function () {
@@ -74,7 +69,6 @@ sign_btn.forEach(sign_btn => sign_btn.addEventListener("click", function () {
 
 }));
 
-
 const equals = document.querySelector("[data-equals]");
 equals.addEventListener("click", function () {
     history.value += display.value;
@@ -82,7 +76,6 @@ equals.addEventListener("click", function () {
     history.value = eval(history.value);
     divisonByZero();
 })
-
 
 const negate = document.querySelector("[data-negate]");
 negate.addEventListener("click", function () {
@@ -94,7 +87,6 @@ negate.addEventListener("click", function () {
     }
 
 })
-
 
 const operator_btn = document.querySelectorAll("[data-operator]");
 operator_btn.forEach(operator => operator.addEventListener("click", function () {
@@ -119,11 +111,4 @@ operator_btn.forEach(operator => operator.addEventListener("click", function () 
             }
             break;
     }
-
 }))
-
-
-
-
-
-
