@@ -1,5 +1,14 @@
 const display = document.getElementById("display");
 const history = document.getElementById("result");
+const signs = ["+", "-", "/", "*", "%"];
+
+
+const sign = op => {
+    // -2 ker je na zadnjem mestu presledek
+    if (history.value[history.value.length - 2] === op) {
+        return op;
+    }
+}
 
 
 const number_btn = document.querySelectorAll("[data-number]");
@@ -18,19 +27,12 @@ number_btn.forEach(number_btn => number_btn.addEventListener("click", function (
 
 
     // pogleda, če je na zadnjem mestu operator, drugače se displat reseta, če je vneseno število
-    const signs = ["+", "-", "/", "*", "%"];
-    const sign = op => {
-        // -2 ker je na zadnjem mestu presledek
-        if (history.value[history.value.length - 2] === op) {
-            return true;
-        }
-    }
     if (!signs.some(sign)) {
         history.value = "";
     }
 
-
 }));
+
 
 const clear_entry = document.querySelector("[data-clearentry]");
 clear_entry.addEventListener("click", function () {
@@ -55,7 +57,8 @@ const sign_btn = document.querySelectorAll("[data-sign]");
 sign_btn.forEach(sign_btn => sign_btn.addEventListener("click", function () {
 
     // če nimamo števil nemoremo pisat znakov
-    if (display.value !== "") {
+    // !signs.some(sign) - če na zadnjem mestu ni znaka, lahko napišemo znak
+    if (display.value !== "" || !signs.some(sign)) {
         history.value += display.value + " " + sign_btn.innerHTML + " ";
         display.value = "";
     }
@@ -68,6 +71,11 @@ equals.addEventListener("click", function () {
     history.value += display.value;
     display.value = "";
     history.value = eval(history.value);
+
+    // error ko deliš z 0
+    if (history.value === "Infinity") {
+        history.value = "Can't divide with 0 !"
+    }
 })
 
 
@@ -94,24 +102,19 @@ operator_btn.forEach(operator => operator.addEventListener("click", function () 
             break;
         case "x²":
             if (display.value !== "") {
-                history.value = Math.pow(parseFloat(display.value),2);
+                history.value = Math.pow(parseFloat(display.value), 2);
                 display.value = "";
             }
             break;
         case "1/x":
             if (display.value !== "") {
-                history.value = 1/parseFloat(display.value);
+                history.value = 1 / parseFloat(display.value);
                 display.value = "";
             }
             break;
     }
 
 }))
-
-
-// deljenje z nič
-
-// samo en zaporedni operatov
 
 
 
