@@ -2,11 +2,8 @@ const display = document.getElementById("display");
 const history = document.getElementById("result");
 const signArray = [];
 
-
-
 const signs = document.querySelectorAll("[data-sign]");
 signs.forEach(sign => signArray.push(sign.innerHTML));
-
 
 const sign = op => {
     // -2 ker je na zadnjem mestu presledek
