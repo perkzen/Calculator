@@ -1,12 +1,24 @@
 const display = document.getElementById("display");
 const history = document.getElementById("result");
-const signs = ["+", "-", "/", "*", "%"];
+const signArray = [];
+
+
+
+const signs = document.querySelectorAll("[data-sign]");
+signs.forEach(sign => signArray.push(sign.innerHTML));
 
 
 const sign = op => {
     // -2 ker je na zadnjem mestu presledek
     if (history.value[history.value.length - 2] === op) {
         return op;
+    }
+}
+
+
+const divisonByZero = () => {
+    if (history.value === "Infinity") {
+        history.value = "Can't divide by zero";
     }
 }
 
@@ -27,7 +39,7 @@ number_btn.forEach(number_btn => number_btn.addEventListener("click", function (
 
 
     // pogleda, če je na zadnjem mestu operator, drugače se displat reseta, če je vneseno število
-    if (!signs.some(sign)) {
+    if (!signArray.some(sign)) {
         history.value = "";
     }
 
@@ -58,7 +70,7 @@ sign_btn.forEach(sign_btn => sign_btn.addEventListener("click", function () {
 
     // če nimamo števil nemoremo pisat znakov
     // !signs.some(sign) - če na zadnjem mestu ni znaka, lahko napišemo znak
-    if (display.value !== "" || !signs.some(sign)) {
+    if (display.value !== "" || !signArray.some(sign)) {
         history.value += display.value + " " + sign_btn.innerHTML + " ";
         display.value = "";
     }
@@ -71,11 +83,7 @@ equals.addEventListener("click", function () {
     history.value += display.value;
     display.value = "";
     history.value = eval(history.value);
-
-    // error ko deliš z 0
-    if (history.value === "Infinity") {
-        history.value = "Can't divide with 0 !"
-    }
+    divisonByZero();
 })
 
 
@@ -110,6 +118,7 @@ operator_btn.forEach(operator => operator.addEventListener("click", function () 
             if (display.value !== "") {
                 history.value = 1 / parseFloat(display.value);
                 display.value = "";
+                divisonByZero();
             }
             break;
     }
