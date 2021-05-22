@@ -62,7 +62,11 @@ sign_btn.forEach(sign_btn => sign_btn.addEventListener("click", function () {
 
     // če nimamo števil nemoremo pisat znakov
     // !signs.some(sign) - če na zadnjem mestu ni znaka, lahko napišemo znak
-    if (display.value !== "" || !signArray.some(sign)) {
+
+    if (display.value !== "" || !signArray.some(sign) && history.value !== "Can't divide by zero") {
+        if (history.value === "" && display.value === "") {
+            history.value = "0";
+        }
         history.value += display.value + " " + sign_btn.innerHTML + " ";
         display.value = "";
     }
