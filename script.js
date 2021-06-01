@@ -5,10 +5,10 @@ const signArray = [];
 const signs = document.querySelectorAll("[data-sign]");
 signs.forEach(sign => signArray.push(sign.innerHTML));
 
-const sign = op => {
+const sign = sign => {
     // -2 ker je na zadnjem mestu presledek
-    if (history.value[history.value.length - 2] === op) {
-        return op;
+    if (history.value[history.value.length - 2] === sign) {
+        return sign;
     }
 }
 
